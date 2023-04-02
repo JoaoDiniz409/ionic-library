@@ -1,20 +1,65 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Blank
+      Listagem de Livros 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+<ion-content>
+  <div *ngFor="let livro of livros">
+    <ion-card>
+      <ion-card-header>
+        <img src={{livro.imagem}} />
+        <div class="card-content">
+          <div class="livro-info">
+            <ion-card-title>{{livro.id}}</ion-card-title>
+            <ion-card-subtitle>Título: {{livro.titulo}}h</ion-card-subtitle>
+            <ion-card-subtitle>Paginas: {{livro.paginas}}</ion-card-subtitle>
+            <ion-card-subtitle>Data: {{livro.data}}</ion-card-subtitle>
+          </div>
+          <div class="buttons">
+            <ion-button title="editar" shape="circle" color="warning" id="edit-button" (click) = "onClickEditar(livro.id)">
+              <ion-icon name="pencil-sharp"></ion-icon>
+            </ion-button>
+            <ion-button title="deleta" shape="circle" color="danger" (click) = "onClickDelete(livro.id)">
+              <ion-icon name="trash-sharp"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </ion-card-header>
+    </ion-card>
   </div>
+
+  <form (ngSubmit) = 'onClickSalvar()'>
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input type="text" (change) = "getTitulo($event)" [(ngModel)]="titulo" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Imagem</ion-label>
+      <ion-input type="text" (change) = "getImagem($event)" [(ngModel)]="imagem" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Páginas</ion-label>
+      <ion-input type="number" (change) = "getPaginas($event)" [(ngModel)]="paginas" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating" style="padding-bottom: 2rem;">Data</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" (change) = "getData($event)" [(ngModel)]="data" [ngModelOptions]="{standalone: true}"></ion-datetime>
+    </ion-item>
+
+    <ion-button expand="block" type="submit">Salvar</ion-button>
+    <ion-button expand="block" color="danger" (click)="resetForm()">Cancelar</ion-button>
+  </form>
 </ion-content>
+
+

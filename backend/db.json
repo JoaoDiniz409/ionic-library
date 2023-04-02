@@ -1,0 +1,45 @@
+{
+  "livros": [
+    {
+      "id": 1,
+      "titulo": "A dança da morte",
+      "imagem": "https://m.media-amazon.com/images/I/51Wpx+aPtZS._SY344_BO1,204,203,200_.jpg",
+      "paginas": 1392,
+      "data": "2022-10-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "titulo": "A Revolução dos Bichos",
+      "imagem": "https://m.media-amazon.com/images/I/61owA5ey3iL._SY344_BO1,204,203,200_QL70_ML2_.jpg",
+      "data": "2021-03-30T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "titulo": "1984",
+      "imagem": "https://m.media-amazon.com/images/I/51VXYaKO-sL._SX346_BO1,204,203,200_.jpg",
+      "paginas": 354,
+      "data": "2020-05-20T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "titulo": "A guerra dos tronos",
+      "imagem": "https://m.media-amazon.com/images/I/41UKpOWrZVL._SY344_BO1,204,203,200_QL70_ML2_.jpg",
+      "paginas": 592,
+      "data": "2011-03-22T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "titulo": "Os sete maridos de Evelyn Hugo",
+      "imagem": "https://m.media-amazon.com/images/I/41xVhz5sL1L._SY344_BO1,204,203,200_QL70_ML2_.jpg",
+      "paginas": 414,
+      "data": "2023-04-02T15:41:11.493Z"
+    },
+    {
+      "id": 6,
+      "titulo": "Duna",
+      "imagem": "https://m.media-amazon.com/images/I/41MRn6hy8-L._SX346_BO1,204,203,200_.jpg",
+      "paginas": 843,
+      "data": "1965-08-02T22:08:00-03:00"
+    }
+  ]
+}
