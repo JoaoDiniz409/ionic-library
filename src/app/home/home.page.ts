@@ -17,6 +17,8 @@ export class HomePage {
   titulo = '';
   imagem = '';
   paginas = 0;
+  isHidden = true;
+  tituloPopup = "";
   data = new Date().toISOString();
   constructor(service: HomeService) {
 
@@ -72,6 +74,8 @@ export class HomePage {
   }
 
   onClickEditar(id: number) {
+    this.tituloPopup = "Editar"
+    this.isHidden = false;
     let observableLivro = this.serv.getById(id)
     observableLivro.subscribe(response => {
       let livro = response;
@@ -83,7 +87,10 @@ export class HomePage {
     })
   }
    
-  
+  onClickAdicionar(){
+    this.tituloPopup = "Adicionar"
+    this.isHidden = false;
+  }
 
   onClickDelete(id: number) {
 
@@ -99,6 +106,8 @@ export class HomePage {
     this.imagem = '';
     this.paginas = 0;
     this.data = new Date().toISOString();
+    this.isHidden = true;
+    this.tituloPopup = "";
   }
 
   

@@ -1,11 +1,14 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar id="ion-header">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Listagem de Livros 
+      Encanto das Palavras a melhor livraria da sua cidade  
     </ion-title>
+    <ion-item>
+      <ion-button expand="block" (click)="onClickAdicionar()">Adicionar Livro</ion-button>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
@@ -36,7 +39,8 @@
     </ion-card>
   </div>
 
-  <form (ngSubmit) = 'onClickSalvar()'>
+  <form (ngSubmit) = 'onClickSalvar()' id="popup" [hidden]="isHidden">
+    
     <ion-item>
       <ion-label position="floating">Título</ion-label>
       <ion-input type="text" (change) = "getTitulo($event)" [(ngModel)]="titulo" [ngModelOptions]="{standalone: true}"></ion-input>
@@ -57,8 +61,10 @@
       <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" (change) = "getData($event)" [(ngModel)]="data" [ngModelOptions]="{standalone: true}"></ion-datetime>
     </ion-item>
 
-    <ion-button expand="block" type="submit">Salvar</ion-button>
-    <ion-button expand="block" color="danger" (click)="resetForm()">Cancelar</ion-button>
+    <ion-item>
+      <ion-button expand="block" type="submit">Salvar</ion-button>
+      <ion-button expand="block" color="danger" (click)="resetForm()">Cancelar</ion-button>
+    </ion-item>
   </form>
 </ion-content>
 
